@@ -4642,7 +4642,7 @@ neo-async@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
 
-netlify-lambda@1.0.0-babel-7-beta:
+netlify-lambda@1.0.0-babel-7-beta, netlify-lambda@^1.0.0-babel-7-beta:
   version "1.0.0-babel-7-beta"
   resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.0.0-babel-7-beta.tgz#342febf42daee2f4ac75514313f5ceaf8a0c34cb"
   dependencies:
@@ -4670,6 +4670,10 @@ no-case@^2.2.0:
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
     lower-case "^1.1.1"
+
+node-fetch@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
 
 node-forge@0.7.1:
   version "0.7.1"
