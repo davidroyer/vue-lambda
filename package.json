@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "netlify-lambda": "^1.0.0-babel-7-beta",
     "node-fetch": "^2.1.2",
     "vue": "^2.5.13"

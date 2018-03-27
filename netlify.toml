@@ -4,4 +4,4 @@
   Publish = "dist"
 
 [context.production]
-  environment = { NODE_ENV = "8.7.0" } 
+  environment = { GITHUB_TOKEN = "53e773305788070cd424b1e29306fbb065f93279",  NODE_ENV = "8.7.0" } 

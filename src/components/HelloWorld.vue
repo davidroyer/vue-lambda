@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import {$http} from '../http'
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -24,7 +26,7 @@ export default {
     },
 
     async callGithub() {
-      const {data} = await fetch("https://vue-lambda.netlify.com/.netlify/git/github")
+      const {data} = await $http.get("contents")
       console.log('GIT: ', data);
     }
   }
