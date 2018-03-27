@@ -2,3 +2,6 @@
   Command = "yarn build"
   Functions = "lambda"
   Publish = "dist"
+
+[context.production]
+  environment = { NODE_ENV = "8.7.0" } 
