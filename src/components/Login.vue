@@ -4,7 +4,7 @@
     <button @click="handleLogin">Login</button>
     <button @click="handleLogout">Logout</button>
 
-    <div class="user" v-if="user">
+    <div class="user" v-if="user && user.user_metadata">
       <h3 class="user-name"><strong>USER:</strong>{{user.user_metadata.full_name}}</h3>
       <img class="avatar"  :src="user.user_metadata.avatar_url" alt="Avatar For User">
     </div>
@@ -14,6 +14,7 @@
 
 <script>
 /* eslint-disable */
+import axios from 'axios'
 import netlifyIdentity from 'netlify-identity-widget'
 window.netlifyIdentity = netlifyIdentity
 netlifyIdentity.init();
