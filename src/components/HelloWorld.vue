@@ -9,8 +9,10 @@
 </template>
 
 <script>
-import {$http} from '../http'
+// import {$http} from '../http'
 import Login from './Login.vue'
+import axios from 'axios';
+
 
 export default {
   name: 'HelloWorld',

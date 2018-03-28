@@ -3,11 +3,10 @@
 
     <button @click="handleLogin">Login</button>
     <button @click="handleLogout">Logout</button>
-    <div class="user">
+
+    <div class="user" v-if="user">
       <h3 class="user-name"><strong>USER:</strong>{{user.user_metadata.full_name}}</h3>
-      <!-- <h3 class="user-name"><strong>USER:</strong>David Royer</h3> -->
       <img class="avatar"  :src="user.user_metadata.avatar_url" alt="Avatar For User">
-      <!-- <img class="avatar" src="https://avatars3.githubusercontent.com/u/8834693?v=4" alt=""> -->
     </div>
 
   </div>
@@ -37,7 +36,18 @@ export default {
    netlifyIdentity.on("close", () => console.log("Widget closed"));
    const user = netlifyIdentity.currentUser();
    console.log(user);
-   this.user = user
+   if (user) {
+
+     this.user = user
+     const $http = axios.create({
+       baseURL: `https://vue-lambda.netlify.com/.netlify/git/github/`,
+       headers: {
+         Authorization: `Bearer ${user.token.access_token}`
+       }
+     })
+     const {data} = await $http("contents")
+     console.log('GIT: ', data);
+   }
  },
  methods: {
    handleLogin() {
