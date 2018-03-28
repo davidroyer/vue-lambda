@@ -1,15 +1,30 @@
-const fetch = require('node-fetch').default;
+const low = require('lowdb')
+
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('./lambda/db.json')
+const db = low(adapter)
+
+// db._.mixin(lodashId)
 
 export function handler(event, context, callback) {
-  // const request = await fetch('https://api.github.com/orgs/zeit/members')
-  // var json;
-  fetch('https://api.github.com/orgs/zeit/members')
-  	.then(res => res.json())
-  	.then(json => {
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(json)
-      })
-    });
+  console.log('Event: ', event); console.log('Context: ', context);
 
+  const PostsCollection = db.get('posts')
+  const PostsArray = PostsCollection.value()
+
+  callback(null, {
+    statusCode: 200,
+    body: JSON.stringify(PostsArray)
+  })
 }
+
+
+
+
+
+// function createPost() {
+//   const newPost = PostsCollection.push(
+//     { "id": 3, "title": "Post Title 3", "content": "Content for post 3" },
+//   ).write();
+// }

@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>{{ lambdaMsg }}</p>
     <p><button @click="callLambda">Get Message from Lambda</button></p>
-    <p><button @click="callGithub">Call Github</button></p>
+    <!-- <p><button @click="callGithub">Call Github</button></p> -->
     <Login></Login>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 // import {$http} from '../http'
 import Login from './Login.vue'
-import axios from 'axios';
+// import axios from 'axios';
 
 
 export default {
