@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "netlify-identity-widget": "^1.4.11",
     "netlify-lambda": "^1.0.0-babel-7-beta",
     "node-fetch": "^2.1.2",
     "vue": "^2.5.13"

@@ -4655,6 +4655,10 @@ neo-async@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
 
+netlify-identity-widget@^1.4.11:
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.4.11.tgz#27fbea5302cd1a360547570ddc855fd0cb528e5a"
+
 netlify-lambda@1.0.0-babel-7-beta, netlify-lambda@^1.0.0-babel-7-beta:
   version "1.0.0-babel-7-beta"
   resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.0.0-babel-7-beta.tgz#342febf42daee2f4ac75514313f5ceaf8a0c34cb"

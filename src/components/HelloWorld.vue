@@ -4,11 +4,13 @@
     <p>{{ lambdaMsg }}</p>
     <p><button @click="callLambda">Get Message from Lambda</button></p>
     <p><button @click="callGithub">Call Github</button></p>
+    <Login></Login>
   </div>
 </template>
 
 <script>
 import {$http} from '../http'
+import Login from './Login.vue'
 
 export default {
   name: 'HelloWorld',
@@ -26,9 +28,12 @@ export default {
     },
 
     async callGithub() {
-      const {data} = await $http.get("contents")
+      const {data} = await $http("contents")
       console.log('GIT: ', data);
     }
+  },
+  components: {
+    Login
   }
 }
 </script>
