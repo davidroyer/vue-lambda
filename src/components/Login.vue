@@ -1,31 +1,23 @@
 <template lang="html">
-<div class="login">
-  <!-- Add a menu:
- Log in / Sign up - when the user is not logged in
- Username / Log out - when the user is logged in
--->
-<button @click="handleLogin">Login</button>
-<button @click="handleLogout">Logout</button>
-</div>
+  <div id="login" class="login">
+
+    <button @click="handleLogin">Login</button>
+    <button @click="handleLogout">Logout</button>
+    <div class="user">
+      <h3 class="user-name"><strong>USER:</strong>{{user.user_metadata.full_name}}</h3>
+      <!-- <h3 class="user-name"><strong>USER:</strong>David Royer</h3> -->
+      <img class="avatar"  :src="user.user_metadata.avatar_url" alt="Avatar For User">
+      <!-- <img class="avatar" src="https://avatars3.githubusercontent.com/u/8834693?v=4" alt=""> -->
+    </div>
+
+  </div>
 </template>
 
 <script>
 /* eslint-disable */
 import netlifyIdentity from 'netlify-identity-widget'
 window.netlifyIdentity = netlifyIdentity
-// You must run this once before trying to interact with the widget
-netlifyIdentity.init()
-
-
-// netlifyIdentity.open("signup"); // open the modal to the signup tab
-
-
-// Close the modal
-// netlifyIdentity.close();
-
-// Logout the user
-// Get the current user:
-
+netlifyIdentity.init();
 
 export default {
   name: 'Login',
@@ -34,7 +26,9 @@ export default {
       user: {}
     }
   },
-  created() {
+  mounted() {
+    // You must run this once before trying to interact with the widget
+
    netlifyIdentity.on("init", user => console.log(user));
    netlifyIdentity.on("login", login => console.log(user));
    netlifyIdentity.on("logout", () => console.log("Logged out"));
@@ -57,4 +51,24 @@ export default {
 </script>
 
 <style lang="css">
+.user {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #333;
+  padding: 1em;
+  color: white;
+}
+
+.user-name strong {
+  margin-right: .5em;
+  font-weight: 900;
+}
+img.avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px;
+}
 </style>
