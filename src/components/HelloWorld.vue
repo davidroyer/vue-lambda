@@ -27,11 +27,6 @@ export default {
       fetch("/.netlify/functions/hello").then(response => response.json()).then((json) => {
         this.lambdaMsg = json.msg
       })
-    },
-
-    async callGithub() {
-      const {data} = await $http("contents")
-      console.log('GIT: ', data);
     }
   },
   components: {
