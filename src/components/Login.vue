@@ -45,8 +45,12 @@ export default {
          Authorization: `Bearer ${user.token.access_token}`
        }
      })
-     const {data} = await $http("contents")
-     console.log('GIT: ', data);
+
+     async function getData() {
+       const {data} = await $http("contents")
+       console.log('GIT: ', data);
+     }
+    getData();
    }
  },
  methods: {
