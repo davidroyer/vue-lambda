@@ -1,1 +1,1 @@
-Some text here using insomnia base64 function 2
+Testing using regular api url & Personal Access Token
